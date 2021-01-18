@@ -63,7 +63,7 @@ export default {
     },
     redirect() {
       if (this.playerPokemonName && this.opponentPokemonName) {
-        this.$router.push('/arena');
+        this.$router.push('/arena?pId=' + this.getPokemonsList.find((el) => el.name == this.playerPokemonName).id + '&oId=' + this.getPokemonsList.find((el) => el.name == this.opponentPokemonName).id);
       }
     },
   },

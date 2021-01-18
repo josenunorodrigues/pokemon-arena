@@ -1,0 +1,57 @@
+@import "@/variables.scss";
+
+.player {
+  &__battle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &--inverted {
+      flex-direction: row-reverse;
+      .player__battle-health {
+        margin-left: 0px;
+        margin-right: 10px;
+      }
+    }
+    &-health {
+      position: relative;
+      height: 12px;
+      width: 100px;
+      background-color: rgba(0,0,0,0.8);
+      border: 2px solid rgba(0,0,0,0.8);
+      border-radius: 10px;
+      box-shadow: 0 0 3px -1px $black;
+      margin-left: 10px;
+      &-inner {
+        content: '';
+        position: absolute;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        left: 0;
+        top: 0;
+        border: 2px solid $white-gray;
+        border-radius: 10px;
+        z-index: 5;
+      }
+      // &:before {
+      //   content: '';
+      //   position: absolute;
+      //   width: calc(100% - 4px);
+      //   height: calc(100% - 4px);
+      //   left: 0;
+      //   top: 0;
+      //   border: 2px solid $white-gray;
+      //   border-radius: 10px;
+      // }
+      &-bar {
+        position: relative;
+        background: linear-gradient(#12a74a, #cfe8d9);
+        margin-left: 2px;
+        margin-top: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        z-index: 2;
+        // border-radius: 10px;
+      }
+    }
+  }
+}
