@@ -1,0 +1,10 @@
+@import "@/variables.scss";
+
+.main-menu {
+  padding: 15px;
+  &__button-area {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
