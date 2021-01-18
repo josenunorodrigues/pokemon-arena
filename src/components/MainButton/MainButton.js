@@ -6,5 +6,6 @@ export default {
   props: {
     text: String,
     href: String,
+    disabled: Boolean,
   },
 }

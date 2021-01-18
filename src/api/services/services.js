@@ -9,10 +9,11 @@ const service = {
     }
     return http.get(url)
   },
-  async getPokemonInfo (id) {
+  async getPokemonInfo (payload) {
+    let id = Number(payload)
     let url = Endpoint.POKEMON_INFO;
-    if (id && typeof id == 'number') {
-      url.replace('id', id);
+    if (id && !isNaN(id)) {
+      url = url.replace('{id}', id);
       return http.get(url)
     }
     return {};
