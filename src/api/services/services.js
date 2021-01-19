@@ -18,6 +18,15 @@ const service = {
     }
     return {};
   },
+  async getPokemonMove (payload) {
+    let id = Number(payload)
+    let url = Endpoint.POKEMON_MOVE;
+    if (id && !isNaN(id)) {
+      url = url.replace('{id}', id);
+      return http.get(url)
+    }
+    return {};
+  },
 }
 
 export default service;

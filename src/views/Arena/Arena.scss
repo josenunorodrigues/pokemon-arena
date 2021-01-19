@@ -15,17 +15,8 @@
     flex-direction: column;
     align-items: center;
   }
-  &__ui {
-    width: 300px;
-    height: 117px;
-    position: relative;
+  &__back {
     margin: 0 auto;
-    margin-top: 30px;
-    background-image: url(/img/textbox-border.62b8b7c9.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: none;
-    padding: 10px;
-    box-sizing: border-box;
+    margin-top: 60px;
   }
 }

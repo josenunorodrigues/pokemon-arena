@@ -5,10 +5,10 @@ export default {
     if(!getters.getPokemonsList.length) {
       const {data} = await Service.getPokemons(payload);
       let results = data.results.map((el) => {
-        let array = el.url.split('/');
+        let splitUrl = el.url.split('/');
         return {
           name: el.name,
-          id: array[array.length - 2]
+          id: splitUrl[splitUrl.length - 2]
         }
       })
       commit('setPokemonsList', results)
@@ -19,6 +19,12 @@ export default {
   async actionPokemonInfo({commit, getters}, payload) {
     const {data} = await Service.getPokemonInfo(payload);
     commit('setPokemonInfo', data)
+    return data;
+  },
+  async actionPokemonMove({commit, getters}, payload) {
+    let splitUrl = payload.split('/');
+    const {data} = await Service.getPokemonMove(splitUrl[splitUrl.length - 2]);
+    commit('setPokemonMove', data)
     return data;
   },
 }

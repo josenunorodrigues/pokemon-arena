@@ -1,10 +1,14 @@
 @import "@/variables.scss";
 
 .player {
+  & + & {
+    margin-top: 20px;
+  }
   &__battle {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     &--inverted {
       flex-direction: row-reverse;
       .player__battle-health {
@@ -32,16 +36,6 @@
         border-radius: 10px;
         z-index: 5;
       }
-      // &:before {
-      //   content: '';
-      //   position: absolute;
-      //   width: calc(100% - 4px);
-      //   height: calc(100% - 4px);
-      //   left: 0;
-      //   top: 0;
-      //   border: 2px solid $white-gray;
-      //   border-radius: 10px;
-      // }
       &-bar {
         position: relative;
         background: linear-gradient(#12a74a, #cfe8d9);
@@ -50,8 +44,39 @@
         width: calc(100% - 4px);
         height: calc(100% - 4px);
         z-index: 2;
-        // border-radius: 10px;
       }
+    }
+  }
+  &__moves {
+    width: 300px;
+    height: 117px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-image: url('./../../assets/textbox-border.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    padding: 15px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 120px 120px;
+    grid-column-gap: 20px;
+    &-button {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      padding: 5px;
+      font-size: 14px;
+      user-select: none;
+      &:hover {
+        box-shadow:inset 0px 0px 0px 2px $gray;
+      }
+      &--depleted {
+        color: $red;
+      }
+    }
+    &-name {
+      text-transform: capitalize;
     }
   }
 }

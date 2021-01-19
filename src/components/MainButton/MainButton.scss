@@ -13,6 +13,7 @@
   transition: background-color .1s ease-in-out;
   border: none;
   outline: none;
+  width: fit-content;
   cursor: pointer;
   &:hover {
     background-color: hsla(0,0%,100%,.1);

@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="arena">
-      <div class="arena__fight">
+      <div class="arena__fight" v-if="dataLoaded">
         <player :playerInfo="opponentPokemonInfo"></player>
         <player :playerInfo="playerPokemonInfo" :isPlayer="true"></player>
       </div>
-      <div class="arena__ui">
-          <img class="arena__ui-img" scr="./../../assets/textbox-border.jpg">
-      </div>
     </div>
+    <main-button class="arena__back" text="Back" href="/"></main-button>
   </div>
 </template>
 

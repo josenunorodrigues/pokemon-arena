@@ -8,6 +8,12 @@
         <div class="player__battle-health-bar" :style="healthWidth"></div>
       </div>
     </div>
+    <div v-if="isPlayer" class="player__moves">
+      <div class="player__moves-button" :class="!move.pp ? 'player__moves-button--depleted' : ''" v-for="move in moves" :key="move.name" @click="move.pp ? move.pp-- : undefined">
+        <div class="player__moves-name">{{move.name}}</div>
+        <div>{{move.pp}}/{{move.maxPP}}</div>
+      </div>
+    </div>
   </div>
 </template>
 
